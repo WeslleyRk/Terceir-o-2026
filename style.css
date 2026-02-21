@@ -19,6 +19,7 @@
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-gold: rgba(201, 168, 76, 0.3);
 }
+@import url("https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Goldman:wght@400;700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -26,7 +27,13 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-primary);
   line-height: 1.6;
@@ -70,7 +77,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .navbar.scrolled {
@@ -80,8 +89,9 @@ img {
 }
 
 .navbar__logo {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: 'Fontdiner Swanky', static; /* Nome exato do Google Fonts */
+  font-size: 2rem; /* Troque 'normal' por um tamanho real */
+  font-weight: 400; /* Verifique se a fonte tem peso 700 */
   letter-spacing: -0.02em;
   color: var(--accent-gold);
 }
@@ -107,7 +117,7 @@ img {
 }
 
 .navbar__links a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -200,14 +210,18 @@ img {
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(201, 168, 76, 0.08) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -230,6 +244,7 @@ img {
 }
 
 .hero__title {
+  font-family: 'Fontdiner Swanky', cursive;
   font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 800;
   line-height: 1.1;
@@ -239,8 +254,13 @@ img {
   transform: translateY(20px);
   animation: fadeUp 0.8s ease forwards 0.4s;
 }
-
+/*.hero h2{
+  font-family: 'fontdiner swanky', cursive;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 400;
+} */
 .hero__title .gold {
+
   color: var(--accent-gold);
 }
 
@@ -303,7 +323,7 @@ img {
 /* ===== SECTION COMMON ===== */
 .section {
   padding: 6rem 2rem;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -339,7 +359,7 @@ img {
 /* ===== STUDENTS GRID ===== */
 .students-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
 }
 
@@ -363,13 +383,15 @@ img {
 .student-card:hover {
   transform: translateY(-8px);
   border-color: var(--border-gold);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border-gold);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 0 1px var(--border-gold);
 }
 
 .student-card__img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5; /* Ficou um pouco mais alto que o 3/4 anterior */
   overflow: hidden;
 }
 
@@ -394,7 +416,7 @@ img {
 }
 
 .student-card__info {
-  padding: 1rem 1.25rem 1.25rem;
+  padding: 2rem 1rem; /* Aumentei o respiro (padding) interno */
   text-align: center;
 }
 
@@ -475,13 +497,17 @@ img {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(to bottom, var(--accent-gold), var(--border-subtle));
+  background: linear-gradient(
+    to bottom,
+    var(--accent-gold),
+    var(--border-subtle)
+  );
 }
 
 .timeline-item {
@@ -491,7 +517,7 @@ img {
 }
 
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -2.35rem;
   top: 0.35rem;
@@ -596,14 +622,18 @@ img {
 }
 
 .message-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: 50%;
   transform: translateX(-50%);
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(201, 168, 76, 0.06) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -730,7 +760,8 @@ img {
 }
 
 @keyframes scrollPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scaleY(1);
   }
@@ -807,53 +838,82 @@ img {
     font-size: 2.25rem;
   }
 }
-/* ===== CAROUSEL MEMORIES ===== */
+/* ===== CAROUSEL MEMORIES ATUALIZADO ===== */
 .carousel-container {
   width: 100%;
-  overflow: hidden; /* Esconde o que sai da tela */
+  overflow: hidden;
   position: relative;
-  padding: 1rem 0;
+  padding: 2rem 0;
+  background: transparent;
 }
 
 .carousel-track {
   display: flex;
-  /* Largura total: número de imagens (incluindo a duplicada) * 100% */
-  width: calc(300px * 6); /* Ajuste os 300px conforme necessário */
-  animation: scroll 20s linear infinite; /* Velocidade do carrossel */
+  width: max-content; /* Faz a trilha ter o tamanho exato de todas as fotos somadas */
+  animation: scroll 40s linear infinite; /* Aumentei o tempo para 40s porque tem muita foto */
 }
 
-/* Pausa a animação ao passar o mouse */
-.carousel-container:hover .carousel-track {
-  animation-play-state: paused;
+.carousel-track:hover {
+  animation-play-state: paused; /* Pausa ao passar o mouse */
 }
 
-.carousel-track .memory-card {
-  width: 300px; /* Largura de cada slide */
-  margin: 0 10px; /* Espaço entre os slides */
+.memory-card {
+  width: 300px;
+  height: 250px; /* Definir altura fixa ajuda a manter o padrão */
+  margin: 0 10px;
   flex-shrink: 0;
-  grid-column: auto; /* Remove a lógica da grade antiga */
-  grid-row: auto;
-  aspect-ratio: 4 / 3;
 }
 
-/* Animação de rolagem */
+.memory-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer */
+  border-radius: 15px;
+}
+
+/* Animação Infinita Real */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    /* Move para a esquerda o total da largura das imagens */
-    transform: translateX(calc(-300px * 5));
+    /* O truque: ele move até o final do conteúdo original */
+    transform: translateX(-50%); 
   }
 }
 
-/* Ajustes responsivos para o carrossel */
-@media (max-width: 768px) {
-  .carousel-track .memory-card {
-    width: 250px;
-  }
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 5)); }
+/* ===== BOTÃO FLUTUANTE INSTAGRAM ===== */
+.insta-fixed {
+  position: fixed;      /* Faz ele seguir a tela */
+  bottom: 25px;         /* Distância do fundo */
+  right: 25px;          /* Distância da direita */
+  width: 70px;
+  height: 70px;
+  background-color: var(--bg-card);
+  color: var(--accent-gold);
+  border: 1px solid var(--border-gold);
+  border-radius: 50%;   /* Deixa redondinho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;        /* Garante que fique em cima de TUDO */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.insta-fixed:hover {
+  transform: scale(1.1) rotate(5deg); /* Aumenta e dá uma leve girada */
+  background-color: var(--accent-gold);
+  color: var(--bg-dark);
+  box-shadow: 0 15px 35px rgba(201, 168, 76, 0.3);
+}
+
+/* Ajuste para não sumir no mobile */
+@media (max-width: 480px) {
+  .insta-fixed {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
   }
 }
