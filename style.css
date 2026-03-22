@@ -89,9 +89,9 @@ img {
 }
 
 .navbar__logo {
-  font-family: 'Fontdiner Swanky', static; /* Nome exato do Google Fonts */
-  font-size: 2rem; /* Troque 'normal' por um tamanho real */
-  font-weight: 400; /* Verifique se a fonte tem peso 700 */
+  font-family: 'Fontdiner Swanky', static; 
+  font-size: 2rem; 
+  font-weight: 400; 
   letter-spacing: -0.02em;
   color: var(--accent-gold);
 }
@@ -254,13 +254,8 @@ img {
   transform: translateY(20px);
   animation: fadeUp 0.8s ease forwards 0.4s;
 }
-/*.hero h2{
-  font-family: 'fontdiner swanky', cursive;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 400;
-} */
-.hero__title .gold {
 
+.hero__title .gold {
   color: var(--accent-gold);
 }
 
@@ -356,10 +351,10 @@ img {
   border-radius: 1px;
 }
 
-/* ===== STUDENTS GRID ===== */
+/* ===== STUDENTS GRID ATUALIZADO (3 COLUNAS) ===== */
 .students-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas = 4 fileiras para 12 cards */
   gap: 1.5rem;
 }
 
@@ -391,7 +386,7 @@ img {
 .student-card__img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5; /* Ficou um pouco mais alto que o 3/4 anterior */
+  aspect-ratio: 4 / 5; 
   overflow: hidden;
 }
 
@@ -416,7 +411,7 @@ img {
 }
 
 .student-card__info {
-  padding: 2rem 1rem; /* Aumentei o respiro (padding) interno */
+  padding: 2rem 1rem; 
   text-align: center;
 }
 
@@ -818,7 +813,7 @@ img {
 
 @media (max-width: 480px) {
   .students-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr; /* 1 coluna no celular para não espremer os cards */
     gap: 0.75rem;
   }
 
@@ -838,71 +833,77 @@ img {
     font-size: 2.25rem;
   }
 }
-/* ===== CAROUSEL MEMORIES ATUALIZADO ===== */
+
+/* ===== CAROUSEL MEMORIES CORRIGIDO ===== */
 .carousel-container {
-  width: 100%;
-  overflow: hidden;
+  width: 100vw;               /* Ocupa a largura total da janela */
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;         /* Centraliza o container 100vw */
+  margin-right: -50vw;
+  overflow: hidden;           /* Esconde as imagens que saem da tela */
   padding: 2rem 0;
   background: transparent;
 }
 
 .carousel-track {
   display: flex;
-  width: max-content; /* Faz a trilha ter o tamanho exato de todas as fotos somadas */
-  animation: scroll 40s linear infinite; /* Aumentei o tempo para 40s porque tem muita foto */
+  width: max-content;          /* Permite que o conteúdo seja mais largo que a tela */
+  animation: scroll 30s linear infinite; 
 }
 
 .carousel-track:hover {
-  animation-play-state: paused; /* Pausa ao passar o mouse */
+  animation-play-state: paused; 
 }
 
 .memory-card {
-  width: 300px;
-  height: 250px; /* Definir altura fixa ajuda a manter o padrão */
+  width: 350px;               /* Largura fixa para os cards no carrossel */
+  height: 250px; 
   margin: 0 10px;
-  flex-shrink: 0;
+  flex-shrink: 0;             /* Impede que o flexbox diminua os cards */
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
 }
 
 .memory-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer */
-  border-radius: 15px;
+  object-fit: cover; 
 }
 
-/* Animação Infinita Real */
+/* Animação de Deslizamento */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    /* O truque: ele move até o final do conteúdo original */
-    transform: translateX(-50%); 
+    transform: translateX(-50%); /* Move metade do conteúdo para o loop perfeito */
   }
 }
 
 /* ===== BOTÃO FLUTUANTE INSTAGRAM ===== */
 .insta-fixed {
-  position: fixed;      /* Faz ele seguir a tela */
-  bottom: 25px;         /* Distância do fundo */
-  right: 25px;          /* Distância da direita */
+  position: fixed;      
+  bottom: 25px;         
+  right: 25px;          
   width: 70px;
   height: 70px;
   background-color: var(--bg-card);
   color: var(--accent-gold);
   border: 1px solid var(--border-gold);
-  border-radius: 50%;   /* Deixa redondinho */
+  border-radius: 50%;   
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999;        /* Garante que fique em cima de TUDO */
+  z-index: 9999;        
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .insta-fixed:hover {
-  transform: scale(1.1) rotate(5deg); /* Aumenta e dá uma leve girada */
+  transform: scale(1.1) rotate(5deg); 
   background-color: var(--accent-gold);
   color: var(--bg-dark);
   box-shadow: 0 15px 35px rgba(201, 168, 76, 0.3);
